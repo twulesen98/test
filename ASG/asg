@@ -1,0 +1,47 @@
+# install anaconda in ubuntu
+sudo apt install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+Wget https://repo.anaconda.com/archive/ Anaconda3-2020.11-Linux-x86_64.sh -O ~/Downloads/Anaconda3-2020.11-Linux-x86_64.sh
+cd ~/Downloads
+sudo chmod +x Anaconda3-2020.11- Linux-x86_64.sh
+./Anaconda3-2020.11-Linux-x86_64.sh
+
+# check GLIBC version
+ldd --version
+
+# create environment for CloudComPy in Anaconda3
+. ~/anaconda3/etc/profile.d/conda.sh
+conda activate
+conda create --name CloudComPy39 python=3.9
+conda activate CloudComPy39
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+conda install qt numpy psutil boost xerces-c pcl gdal cgal cmake pdal opencv ffmpeg mysql "qhull=2019.1" matplotlib "eigen=3.3.9" tbb openmp
+
+# load the environment
+. ~/anaconda3/etc/profile.d/conda.sh
+conda activate CloudComPy39
+export LD_LIBRARY_PATH= ~/anaconda3/envs/CloudComPy39/lib:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH= ~/anaconda3/envs/CloudComPy39/lib/cloudcompare:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH= ~/anaconda3/envs/CloudComPy39/lib/cloudcompare/plugins:${LD_LIBRARY_PATH}
+
+# call out CloudCompare
+~/anaconda3/envs/CloudComPy39/ bin/CloudCompare
+
+# test cloudcompare
+cd ~/anaconda3/envs/ CloudComPy39/doc/PythonAPI_test
+
+# test python file
+ctest
+
+# execute all test
+.envPyCC.sh
+
+# complete the python path
+python test001.py
+
+# install cloudcompare
+Snap install core
+Sudo snap install cloudcompare
+
+# open cloudcompare
+Cloudcompare.CloudCompare
