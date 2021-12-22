@@ -1,0 +1,4 @@
+i) An assignment statement gives worth to a variable, for example x=1.
+
+ii) An interpreted language is a programming language which are generally interpreted, without compiling a program.
+    A compiled language is a programming language which are generally compiled and not interpreted.
