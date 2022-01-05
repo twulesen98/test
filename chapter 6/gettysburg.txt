@@ -1,0 +1,1 @@
+adaThe open function creates the connection between the disk file and the file object.
