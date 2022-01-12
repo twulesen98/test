@@ -1,10 +1,10 @@
 # Natural Language Processing & Sentiment Analysis
 # 1. pip install textblob
 
-from textblob import TextBolb
+from textblob import TextBlob
 text = 'Tomorroe will be great weekend for us'
 blob = TextBlob('text')
-blob.detect.language()
+blob.detect_language()
 chinese = blob.translate(to='zh')
 spanish = blob.translate(to='es')
 
